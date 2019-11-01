@@ -70,7 +70,29 @@ database.ref().on("child_added", function (childSnapshot) {
     // calculate train times using hard math 
     // to calculate the next train time: 
 
+    // First Time (pushed back 1 year to make sure it comes before current time)
+    var firstTimeConverted = moment(childSnapshot.val().trainTime, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
 
+    // Current Time
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // Time apart (remainder)
+    var tRemainder = diffTime % childSnapshot.val().trainFrequency;
+    console.log(tRemainder);
+
+    // Minute Until Train
+    var tMinutesTillTrain = childSnapshot.val().trainFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+    // Next Train
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 
 
@@ -82,9 +104,12 @@ database.ref().on("child_added", function (childSnapshot) {
     var timeTD = $("<td>").text(childSnapshot.val().trainTime);
     var freqTD = $("<td>").text(childSnapshot.val().trainFrequency);
 
+    var timeTilTrain = $("<td>").text(moment(nextTrain).format ("hh:mm"));
+    var minutesAway = $("<td>").text(tMinutesTillTrain);
+
 
     // append tablerow to the table 
-    tableRow.append(nameTD, destTD, timeTD, freqTD);
+    tableRow.append(nameTD, destTD, timeTD, freqTD, timeTilTrain, minutesAway);
     $("tbody").append(tableRow);
 
 
