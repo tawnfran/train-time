@@ -1,31 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train-time</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
 </head>
+
 <body>
+    <div class="jumbotron text-center">
+        <h1 class="display-4 font-weight-bold">Train Schedule</h1>
+        <p class="lead font-weight-bold">Don't Miss the Train! </p>
+        <hr class="my-4">
 
 
-        <!-- Make sure that your app suits this basic spec:
-  
-        * When adding trains, administrators should be able to submit the following:
-          
-          * Train Name
-          
-          * Destination 
-          
-          * First Train Time -- in military time
-          
-          * Frequency -- in minutes
-        
-        * Code this app to calculate when the next train will arrive; this should be relative to the current time.
-        
-        * Users from many different machines must be able to view same train times.
-        
-        * Styling and theme are completely up to you. Get Creative! -->
-    
+
+        <div class="container1">
+            <div class="col-6 float-left">
+                <h2 class="sub-header">Add Train</h2>
+                <p class="card-text">
+                    <form>
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input id="data-name" class="form-control" id="trainName">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainRole">Destination</label>
+                            <input class="form-control" id="data-role">
+                        </div>
+                        <div class=" form-group">
+                            <label for="TrainDestiation">First Train Time</label>
+                            <input class="form-control" id="data-start">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainFreqiency">Frequency(min) </label>
+                            <input class="form-control" id="data-rate">
+                        </div>
+
+                        <span>
+                            <button id="submitInfo" type="button" class="btn btn-link text-secondary">
+                                <i class="trainSearch"></i> Submit
+                            </button>
+
+                            </button></span>
+                    </form>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="container2">
+            <div class="col-6 float-right">
+                <h2 class="sub-header">Current Train Schedule</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">Train name</th>
+                                <th class="col-md-2">Destination</th>
+                                <th class="col-md-3">Frequency (min)</th>
+                                <th class="col-md-4">Next Arrival</th>
+                                <th class="col-md-5">Minutes Away</th>
+                            </tr>
+                        </thead>
+                </div>
+                <tbody>
+                    <tr>
+                        <td class="col-md-1">1,001</td>
+                        <td class="col-md-2">1,001</td>
+                        <td class="col-md-3">1,001</td>
+                    </tr>
+
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script type="text/javascript" src=" "> </script>
+
 </body>
+
 </html>
