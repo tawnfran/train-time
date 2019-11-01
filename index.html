@@ -16,19 +16,24 @@
     <!-- Firebase References -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- Added Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
 <body>
-    <div class="jumbotron text-center">
-        <h1 class="display-4 font-weight-bold">Train Schedule</h1>
-        <p class="lead font-weight-bold">Don't Miss the Train! </p>
-        <hr class="my-4">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4 font-weight-bold">Train Schedule</h1>
+            <p class="lead font-weight-bold">Don't Miss the Train! </p>
+        </div>
+        <hr>
 
 
 
-        <div class="container1">
-            <div class="col-6 float-left">
+
+        <div class="container1 row">
+            <div class="col-6 padding-top-100px">
                 <h2 class="sub-header">Add Train</h2>
                 <p class="card-text">
                     <form>
@@ -37,12 +42,12 @@
                             <input id="data-name" class="form-control" id="trainName">
                         </div>
                         <div class="form-group">
-                            <label for="trainRole">Destination</label>
-                            <input class="form-control" id="data-role">
+                            <label for="trainDest">Destination</label>
+                            <input class="form-control" id="data-dest">
                         </div>
                         <div class=" form-group">
                             <label for="TrainDestiation">First Train Time</label>
-                            <input class="form-control" id="data-start">
+                            <input class="form-control" id="data-time">
                         </div>
                         <div class="form-group">
                             <label for="trainFreqiency">Frequency(min) </label>
@@ -58,11 +63,7 @@
                     </form>
                 </p>
             </div>
-        </div>
-
-
-        <div class="container2">
-            <div class="col-6 float-right">
+            <div class="col-6">
                 <h2 class="sub-header">Current Train Schedule</h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -78,17 +79,20 @@
                 </div>
                 <tbody>
                     <tr>
-                        <td class="col-md-1">1,001</td>
-                        <td class="col-md-2">1,001</td>
-                        <td class="col-md-3">1,001</td>
+                        <td class="col-md-1"></td>
+                        <td class="col-md-2"></td>
+                        <td class="col-md-3"></td>
                     </tr>
 
                 </tbody>
                 </table>
             </div>
         </div>
+    </div>
 
-        <script type="text/javascript" src=" "> </script>
+    <script type="text/javascript" src=javascript.js> </script>
+
+
 
 </body>
 
